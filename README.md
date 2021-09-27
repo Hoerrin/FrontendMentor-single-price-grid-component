@@ -24,8 +24,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [FrontEnd Mentor](httphttps://www.frontendmentor.io/solutions/single-price-grid-component-5QuHq1WgG)
+- Live Site URL: [GitHub Pages](https://hoerrin.github.io/FrontendMentor-single-price-grid-component/)
 
 ## Author
 
