@@ -13,25 +13,40 @@
   <title>Frontend Mentor | Single Price Grid Component</title>
 
   <style>
-
-    *{
+    * {
       box-sizing: border-box;
       padding: 0;
       margin: 0;
     }
 
+    html {
+      font-size: 16px;
+      font-family: 'Karla', sans-serif;
+    }
+
     body {
+      position: relative;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 16px;
-      font-family: 'Karla', sans-serif;
       width: 100%;
-      height: 100vh;
+      height: calc(100% + 60px);
+      padding: 2rem;
+      background-color: hsl(204, 43%, 93%);
     }
 
-    footer{
+    .footer {
       position: absolute;
+      bottom: 0.5rem;
+    }
+
+    h2{
+      margin-bottom: 1.3rem;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
     }
 
     .attribution {
@@ -43,67 +58,134 @@
       color: hsl(228, 45%, 44%);
     }
 
-    .container{
+    .container {
+      position: relative;
       display: grid;
-      grid-template-columns: auto;
-      width: 800px;
-      height: 500px;
+      width: 42rem;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 45% 55%;
       box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       overflow: hidden;
+      background-color: white;
     }
 
-    .container__header{
-      width: 100%;
-      padding: 20px;
+    .container__header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      grid-row: 1;
+      grid-column: 1/3;
+      padding: 3rem;
     }
 
-    .header__title{
+    .header__title {
       color: hsl(179, 62%, 43%);
     }
 
-    .header__title--yellow{
-      color: hsl(71, 73%, 54%);;
+    .header__title--yellow {
+      color: hsl(71, 73%, 54%);
     }
 
-    .header__text{
+    .header__text {
       color: hsl(218, 22%, 67%);
     }
 
-    .container__pricing{
-      padding: 20px;
-      background-color: hsl(179, 62%, 43%);
+    .container__pricing {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      grid-row: 2;
+      padding: 3rem;
+      background-color: hsl(179, 61%, 44%)
     }
 
-    .pricing__title{
+    .pricing__title {
       color: hsl(204, 43%, 93%);
     }
 
-    .pricing__price{
+    .pricing__price {
+      display: flex;
+      align-items: center;
+    }
+
+    .pricing__price--amount {
+      color: hsl(204, 43%, 93%);
+      font-size: 2rem;
+    }
+
+    .pricing__price--perMonth {
+      color: hsl(179, 64%, 65%);
+      margin-left: 1rem;
+    }
+
+    .pricing__text {
+      margin-top: 0.5rem;
       color: hsl(204, 43%, 93%);
     }
 
-    .pricing__perMonth{
-      color: hsl(179, 73%, 49%);
+    .container__whyUs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      grid-row: 2;
+      padding: 3rem;
+      background-color: hsl(179, 47%, 52%)
     }
 
-    .pricing__text{
-      color: hsl(204, 43%, 93%);
-    }
-
-    .container__whyUs{
-      padding: 20px;
-      background-color: hsl(179, 73%, 49%);
-    }
-
-    .pricing__button{
+    .pricing__button {
+      margin-top: 2rem;
       width: 100%;
       height: 3rem;
-      color: hsl(204, 43%, 93%);
+      padding: 1rem;
+      color: hsl(201, 81%, 96%);
       background-color: hsl(71, 73%, 54%);
+      transition: 0.2s;
       border: none;
-      border-radius: 10px;
-      box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.1)
+      border-radius: 5px;
+      box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1)
+    }
+
+    .pricing__button:hover {
+      background-color: #EBCE2A;
+      transition: 0.4s;
+    }
+
+    .whyUs__title {
+      color: hsl(204, 43%, 93%);
+    }
+
+    .whyUs__text {
+      color: hsl(182, 81%, 79%);
+      margin-bottom: 0.2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+      }
+
+      .container__header {
+        grid-column: 1;
+        grid-row: 1;
+        padding: 2rem;
+      }
+
+      .container__pricing {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 2rem;
+      }
+
+      .container__whyUs {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 2rem;
+      }
     }
   </style>
 </head>
@@ -111,37 +193,37 @@
 <body>
   <div class="container">
     <header class="container__header">
-      <h1 class="header__title">Join our community</h1>
-      <h2 class="header__title--yellow">30-day, hassle-free money back guarantee</h2>
-      <p class="header__text">Gain access to our full library of tutorials along with expert code reviews.
-        Perfect for any developers who are serious about honing their skills.</p>
+      <h2 class="header__title">Join our community</h2>
+      <h3 class="header__title--yellow">30-day, hassle-free money back guarantee</h3>
+      <p class="header__text">Gain access to our full library of tutorials along with expert code reviews. Perfect for
+        any developers who are serious about honing their skills.</p>
     </header>
 
-    <section class="container__pricing">
-      <h2 class="pricing__title">Monthly Subscription</h2>
-      
-      <h1 class="pricing__price">&dollar;29</h1>
-      <p class="pricing__perMonth">per month</p>
-
+    <article class="container__pricing">
+      <h3 class="pricing__title">Monthly Subscription</h3>
+      <section class="pricing__price">
+        <h1 class="pricing__price--amount">&dollar;29</h1>
+        <p class="pricing__price--perMonth">per month</p>
+      </section>
       <p class="pricing__text">Full access for less than &dollar;1 a day</p>
       <button class="pricing__button">
-        Sign Up
+        <h3>Sign Up</h3>
       </button>
-    </section>
+    </article>
 
-    <section class="container__whyUs">
-      <h2 class="whyUs__title">Why Us</h2>
+    <article class="container__whyUs">
+      <h3 class="whyUs__title">Why Us</h3>
 
-      <p>Tutorials by industry experts
-        Peer &amp; expert code review
-        Coding exercises
-        Access to our GitHub repos
-        Community forum
-        Flashcard decks
-        New videos every week</p>
-    </section>
+      <p class="whyUs__text">Tutorials by industry experts</p>
+      <p class="whyUs__text">Peer &amp; expert code review</p>
+      <p class="whyUs__text">Coding exercises</p>
+      <p class="whyUs__text">Access to our GitHub repos</p>
+      <p class="whyUs__text">Community forum</p>
+      <p class="whyUs__text">Flashcard decks</p>
+      <p class="whyUs__text">New videos every week</p>
+    </article>
   </div>
-  <footer>
+  <footer class="footer">
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://github.com/Hoerrin">Patryk Dworakowski</a>.
